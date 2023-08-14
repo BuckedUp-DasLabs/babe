@@ -6,12 +6,15 @@
     section {
       width: 100%;
     }
+    &:not(.active) {
+      display: none;
+    }
   }
   &__img {
     position: sticky;
     top: 13rem;
     width: 110%;
-    min-width: 22.1687rem;;
+    min-width: 22.1687rem;
     height: fit-content;
     max-width: 26rem;
     img {
@@ -26,7 +29,20 @@
     width: 100vw;
     height: 100vh;
     min-width: 75rem;
-    background: var(--radialo-novo, radial-gradient(221.11% 86.40% at 74.11% 52.30%, #FFAEA3 0%, #FFA190 27.06%, #FE8272 48.50%));
+    background: var(
+      --radialo-novo,
+      radial-gradient(
+        221.11% 86.4% at 74.11% 52.3%,
+        #ffaea3 0%,
+        #ffa190 27.06%,
+        #fe8272 48.5%
+      )
+    );
+    transition: 0.3s;
+    transform: scaleX(1.2) rotate(15deg);
+    &.alternate {
+      transform: scaleX(1.2) rotate(-15deg);
+    }
     img {
       width: 100%;
       height: 100%;

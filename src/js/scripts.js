@@ -15,13 +15,29 @@ if (!urlParams.get("page")) {
 }
 handleCurrentLink();
 
+const handleUrl = (e) => {
+  e.preventDefault();
+  const state = {};
+  state.page_id = e.target.innerHTML.replace(" ", "-");
+  urlParams.set("page", `${e.target.getAttribute("to")}`);
+  window.history.pushState(state, "", `?${urlParams}`);
+  handleCurrentLink();
+};
+
+const handleCurrentPage = () => {
+  const currentPage = urlParams.get("page");
+  const pages = document.querySelectorAll(".main__container");
+  const bg = document.querySelector(".main__bg");
+  bg.classList.toggle("alternate");
+  pages.forEach((page) => {
+    page.classList.remove("active");
+    if (page.id === currentPage) page.classList.add("active");
+  });
+};
+
 links.forEach((link) => {
   link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const state = {};
-    state.page_id = e.target.innerHTML.replace(" ", "-");
-    urlParams.set("page", `${e.target.getAttribute("to")}`);
-    window.history.pushState(state, "", `?${urlParams}`);
-    handleCurrentLink();
+    handleUrl(e);
+    handleCurrentPage();
   });
 });

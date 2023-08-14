@@ -9,21 +9,6 @@ const handleCurrentLink = () => {
   });
 };
 
-if (!urlParams.get("page")) {
-  urlParams.set("page", "balance");
-  window.history.pushState({ page_id: "balance" }, "", `?${urlParams}`);
-}
-handleCurrentLink();
-
-const handleUrl = (e) => {
-  e.preventDefault();
-  const state = {};
-  state.page_id = e.target.innerHTML.replace(" ", "-");
-  urlParams.set("page", `${e.target.getAttribute("to")}`);
-  window.history.pushState(state, "", `?${urlParams}`);
-  handleCurrentLink();
-};
-
 const handleCurrentPage = () => {
   const currentPage = urlParams.get("page");
   const pages = document.querySelectorAll(".main__container");
@@ -34,6 +19,23 @@ const handleCurrentPage = () => {
     if (page.id === currentPage) page.classList.add("active");
   });
 };
+
+if (!urlParams.get("page")) {
+  urlParams.set("page", "balance");
+  window.history.pushState({ page_id: "balance" }, "", `?${urlParams}`);
+}
+handleCurrentLink();
+handleCurrentPage();
+
+const handleUrl = (e) => {
+  // e.preventDefault();
+  const state = {};
+  state.page_id = e.target.innerHTML.replace(" ", "-");
+  urlParams.set("page", `${e.target.getAttribute("to")}`);
+  window.history.pushState(state, "", `?${urlParams}`);
+  handleCurrentLink();
+};
+
 
 links.forEach((link) => {
   link.addEventListener("click", (e) => {

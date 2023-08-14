@@ -4,9 +4,14 @@
     margin-bottom: 2rem;
   }
   ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.6rem 1.25rem;
     margin-bottom: 3rem;
+    li{
+      flex: 1 1 15.9375rem;
+    }
   }
 }

@@ -1,5 +1,6 @@
 body {
   font-family: Poppins;
+  background-color: #ff8373;
 }
 
 .h1 {
@@ -24,6 +25,14 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+.h5 {
+  color: #fff;
+  font-size: 1.1875rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 85.2%; /* 1.01175rem */
 }
 
 .h6 {

@@ -6,6 +6,9 @@
   z-index: 999;
   padding: 2.75rem;
   background: linear-gradient(0deg, rgba(255, 131, 116, 0) 0%, #ff8374 29.69%);
+  & + main {
+    margin-top: 13rem;
+  }
   .container {
     display: flex;
     align-items: center;

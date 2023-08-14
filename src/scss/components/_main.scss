@@ -1,0 +1,37 @@
+.main {
+  &__container {
+    position: relative;
+    height: 600rem;
+    display: flex;
+    gap: 4rem;
+    section {
+      width: 100%;
+    }
+  }
+  &__img {
+    position: sticky;
+    top: 13rem;
+    width: 110%;
+    height: fit-content;
+    max-width: 26rem;
+    img {
+      width: 100%;
+    }
+  }
+  &__bg {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-width: 75rem;
+    background: var(--radialo-novo, radial-gradient(221.11% 86.40% at 74.11% 52.30%, #FFAEA3 0%, #FFA190 27.06%, #FE8272 48.50%));
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+  }
+}

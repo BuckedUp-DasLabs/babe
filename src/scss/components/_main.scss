@@ -1,4 +1,7 @@
 .main {
+  .animation-helper{
+    contain: paint;
+  }
   &__container {
     position: relative;
     display: flex;
@@ -18,6 +21,7 @@
     height: fit-content;
     max-width: 26rem;
     img {
+      animation: forwards fadeIn 0.5s;
       width: 100%;
     }
   }
@@ -49,5 +53,16 @@
       object-fit: cover;
       display: none;
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateX(30vw);
+    filter: blur(17px);
+  }
+  to {
+    transform: translateX(0);
+    filter: blur(0);
   }
 }

@@ -41,7 +41,8 @@
           transition: 0.3s;
         }
         &:hover,
-        &:focus {
+        &:focus,
+        &.active {
           &:after {
             background-color: #482b2e;
           }

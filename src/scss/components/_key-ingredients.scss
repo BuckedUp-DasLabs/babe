@@ -1,0 +1,12 @@
+.key-ingredients {
+  margin-bottom: 6.38rem;
+  .h1 {
+    margin-bottom: 2rem;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem 1.25rem;
+    margin-bottom: 3rem;
+  }
+}

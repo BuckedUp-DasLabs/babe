@@ -8,10 +8,10 @@
     justify-content: space-between;
     gap: 1rem;
     margin-bottom: 3.46rem;
-    &:nth-child(odd){
+    &:nth-child(even){
       flex-direction: row-reverse;
     }
-    h4 {
+    .h4 {
       max-width: 21.68rem;
     }
   }

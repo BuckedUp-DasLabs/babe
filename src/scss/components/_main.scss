@@ -5,23 +5,26 @@
   &__container {
     position: relative;
     display: flex;
-    gap: 4rem;
+    gap: 5.5rem;
     section {
       width: 100%;
     }
     &:not(.active) {
       display: none;
     }
+    .content{
+      width: 57.9%
+    }
   }
   &__img {
     position: sticky;
     top: 13rem;
-    width: 110%;
-    min-width: 22.1687rem;
+    width: 32.5%;
+    // min-width: 22.1687rem;
     height: fit-content;
     max-width: 26rem;
-    img {
-      animation: forwards fadeIn 0.5s;
+    animation: forwards fadeIn 0.5s;
+    &__img {
       width: 100%;
     }
   }

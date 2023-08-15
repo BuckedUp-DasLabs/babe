@@ -30,3 +30,20 @@
     color: #ff8373;
   }
 }
+
+.custom-pagination-bullet{
+  width: 7rem;
+  height: fit-content;
+  background: none;
+  transition: 0.3s;
+}
+
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active){
+  opacity: 0.4 !important;
+}
+
+.swiper-pagination{
+  display: flex;
+  gap:1rem;
+  bottom:-9rem !important;
+}

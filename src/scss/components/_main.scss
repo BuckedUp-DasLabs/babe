@@ -24,6 +24,9 @@
     height: fit-content;
     max-width: 26rem;
     animation: forwards fadeIn 0.5s;
+    img{
+      width: 100%;
+    }
     &__img {
       width: 100%;
     }

@@ -9,4 +9,10 @@
   .h6 {
     margin-top: 3.38rem;
   }
+  @media (max-width: 1125px) {
+    margin-bottom: 1.94rem;
+    .h6 {
+      margin: 1.5rem 0;
+    }
+  }
 }

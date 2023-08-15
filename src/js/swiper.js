@@ -11,6 +11,11 @@ const swiperPreWorkout = new Swiper(".swiper-pre-workout", {
   slidesPerView: 1,
   spaceBetween: 16,
   loop: true,
+  speed: 500,
+  autoplay:{
+    delay: 2500,
+    disableOnInteraction: true,
+  },
   pagination: {
     el: ".pre-workout-pagination",
     clickable: true,

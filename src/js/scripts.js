@@ -21,8 +21,8 @@ const handleCurrentPage = () => {
 };
 
 if (!urlParams.get("page")) {
-  urlParams.set("page", "balance");
-  window.history.pushState({ page_id: "balance" }, "", `?${urlParams}`);
+  urlParams.set("page", "pre-workout");
+  window.history.pushState({ page_id: "pre-workout" }, "", `?${urlParams}`);
 }
 handleCurrentLink();
 handleCurrentPage();

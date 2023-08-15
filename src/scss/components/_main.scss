@@ -17,7 +17,6 @@
     }
   }
   &__img {
-    display: none;
     position: sticky;
     top: 13rem;
     width: 32.5%;
@@ -31,11 +30,14 @@
       width: 100%;
     }
     @media (max-width: 1125px) {
-      top: 6.5656rem;
+      position: static;
+      width: 100%;
+      max-width: 17rem;
+      margin:auto;
     }
   }
   @media (max-width: 1125px) {
-    &__container .content{
+    &__container .content {
       width: 100%;
     }
   }

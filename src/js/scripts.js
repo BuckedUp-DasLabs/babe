@@ -1,6 +1,29 @@
 const links = document.querySelectorAll(".page-link");
 const urlParams = new URLSearchParams(window.location.search);
 
+const handleWindowWidth = () => {
+  const width = window.innerWidth;
+  const images = document.querySelectorAll(".main__img");
+  const contents = document.querySelectorAll(".content");
+  const titles = document.querySelectorAll(".banner .h1");
+  if (width <= 1125) {
+    images.forEach((image, i) => {
+      if (!contents[i].contains(image))
+        titles[i].insertAdjacentElement("afterend", image);
+    });
+  } else {
+    images.forEach((image, i) => {
+      if (contents[i].contains(image)) {
+        contents[i].insertAdjacentElement("afterend", image);
+      }
+    });
+  }
+};
+window.onresize = (e) => {
+  handleWindowWidth();
+};
+handleWindowWidth();
+
 const handleCurrentLink = () => {
   const currentPage = urlParams.get("page");
   links.forEach((link) => {

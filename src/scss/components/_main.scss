@@ -1,5 +1,5 @@
 .main {
-  .animation-helper{
+  .animation-helper {
     contain: paint;
   }
   &__container {
@@ -12,23 +12,25 @@
     &:not(.active) {
       display: none;
     }
-    .content{
-      width: 57.9%
+    .content {
+      width: 57.9%;
     }
   }
   &__img {
     position: sticky;
     top: 13rem;
     width: 32.5%;
-    // min-width: 22.1687rem;
     height: fit-content;
     max-width: 26rem;
     animation: forwards fadeIn 0.5s;
-    img{
+    img {
       width: 100%;
     }
     &__img {
       width: 100%;
+    }
+    @media (max-width: 1125px) {
+      top: 6.5656rem;
     }
   }
   &__bg {

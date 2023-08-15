@@ -28,7 +28,6 @@ handleCurrentLink();
 handleCurrentPage();
 
 const handleUrl = (e) => {
-  // e.preventDefault();
   const state = {};
   state.page_id = e.target.innerHTML.replace(" ", "-");
   urlParams.set("page", `${e.target.getAttribute("to")}`);
@@ -36,10 +35,19 @@ const handleUrl = (e) => {
   handleCurrentLink();
 };
 
-
 links.forEach((link) => {
   link.addEventListener("click", (e) => {
     handleUrl(e);
     handleCurrentPage();
+  });
+});
+
+const mobileButton = document.querySelector(".header__mobile-button");
+const mobileList = document.querySelector(".header ul");
+
+[...links, mobileButton].forEach((item) => {
+  item.addEventListener("click", () => {
+    mobileButton.classList.toggle("active");
+    mobileList.classList.toggle("active");
   });
 });

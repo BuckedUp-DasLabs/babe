@@ -9,6 +9,9 @@ body {
   font-style: normal;
   font-weight: 900;
   line-height: 120%; /* 4.5rem */
+  @media (max-width: 1125px) {
+    font-size: 1.6875rem;
+  }
 }
 
 .h4 {
@@ -17,6 +20,9 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  @media (max-width: 1125px) {
+    font-size: 1.375rem;
+  }
 }
 
 .h5 {
@@ -33,6 +39,8 @@ body {
   font-style: normal;
   font-weight: 900;
   line-height: 85.2%; /* 1.01175rem */
+  @media (max-width: 1125px) {
+  }
 }
 
 .p {

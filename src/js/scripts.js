@@ -111,9 +111,8 @@ console.log(links);
 
 [...links, mobileButton].forEach((item) => {
   console.log("aaaa", item)
-  item.addEventListener("click", () => {
-    console.log("ASDASDSAD")
+  console.log(item.addEventListener("click", () => {
     mobileButton.classList.toggle("active");
     mobileList.classList.toggle("active");
-  });
+  }));
 });

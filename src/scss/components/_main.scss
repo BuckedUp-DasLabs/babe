@@ -24,6 +24,8 @@
     max-width: 26rem;
     animation: forwards fadeIn 0.5s;
     img {
+      max-height: calc(100vh - 14.3125rem);
+      object-fit: scale-down;
       width: 100%;
     }
     &__img {

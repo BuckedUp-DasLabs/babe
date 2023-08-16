@@ -8,6 +8,9 @@
     justify-content: space-between;
     gap: 3.31rem;
     margin-bottom: 3.46rem;
+    img{
+      max-width: 13.4375rem;
+    }
     &:nth-child(even) {
       flex-direction: row-reverse;
     }

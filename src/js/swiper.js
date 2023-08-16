@@ -11,7 +11,7 @@ const imagesPre = document.querySelectorAll(
 const baseConfig = {
   slidesPerView: 1,
   spaceBetween: 16,
-  loop: true,
+  rewind: true,
   speed: 500,
   autoplay: {
     delay: 2500,

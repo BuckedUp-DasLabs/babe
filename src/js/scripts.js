@@ -6,7 +6,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 let players = {};
 function onYouTubeIframeAPIReady() {
   const pages = document.querySelectorAll(".main__container");
-  console.log(pages);
   pages.forEach((page) => {
     const iframeContainer = page.querySelector("[video]");
     if (iframeContainer) {
@@ -20,7 +19,6 @@ function onYouTubeIframeAPIReady() {
         mute: 1,
         rel: 0,
       };
-      console.log(page.classList.contains("active"))
       if (page.classList.contains("active")) playerVars["autoplay"] = 1;
       if (iframeContainer)
         players[iframeContainer.id] = new YT.Player(iframeContainer.id, {
@@ -107,6 +105,9 @@ links.forEach((link) => {
 
 const mobileButton = document.querySelector(".header__mobile-button");
 const mobileList = document.querySelector(".header ul");
+console.log(mobileButton);
+console.log(mobileList);
+console.log(links);
 
 [...links, mobileButton].forEach((item) => {
   item.addEventListener("click", () => {

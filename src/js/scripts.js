@@ -1,3 +1,37 @@
+let tag = document.createElement("script");
+tag.src = "https://www.youtube.com/iframe_api";
+let firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let players = {};
+function onYouTubeIframeAPIReady() {
+  const pages = document.querySelectorAll(".main__container");
+  console.log(pages);
+  pages.forEach((page) => {
+    const iframeContainer = page.querySelector("[video]");
+    if (iframeContainer) {
+      const playerVars = {
+        origin: window.location.origin,
+        // controls: 0,
+        disablekb: 1,
+        fs: 0,
+        playlist: iframeContainer.id,
+        // autoplay: 1,
+        loop: 1,
+        mute: 1,
+        rel: 0,
+      };
+      console.log(page.classList.contains("active"))
+      if (page.classList.contains("active")) playerVars["autoplay"] = 1;
+      if (iframeContainer)
+        players[iframeContainer.id] = new YT.Player(iframeContainer.id, {
+          videoId: iframeContainer.id,
+          playerVars: playerVars,
+        });
+    }
+  });
+}
+
 const links = document.querySelectorAll(".page-link");
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -19,7 +53,7 @@ const handleWindowWidth = () => {
     });
   }
 };
-window.onresize = (e) => {
+window.onresize = () => {
   handleWindowWidth();
 };
 handleWindowWidth();
@@ -32,14 +66,21 @@ const handleCurrentLink = () => {
   });
 };
 
-const handleCurrentPage = () => {
+const handleCurrentPage = (first = false) => {
   const currentPage = urlParams.get("page");
   const pages = document.querySelectorAll(".main__container");
   const bg = document.querySelector(".main__bg");
   bg.classList.toggle("alternate");
   pages.forEach((page) => {
     page.classList.remove("active");
-    if (page.id === currentPage) page.classList.add("active");
+    const iframe = page.querySelector("iframe");
+    if (!first) {
+      if (iframe) players[iframe.id].pauseVideo();
+    }
+    if (page.id === currentPage) {
+      page.classList.add("active");
+      if (iframe) players[iframe.id].playVideo();
+    }
   });
 };
 
@@ -48,7 +89,7 @@ if (!urlParams.get("page")) {
   window.history.pushState({ page_id: "pre-workout" }, "", `?${urlParams}`);
 }
 handleCurrentLink();
-handleCurrentPage();
+handleCurrentPage(true);
 
 const handleUrl = (e) => {
   const state = {};

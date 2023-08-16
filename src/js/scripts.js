@@ -12,11 +12,10 @@ function onYouTubeIframeAPIReady() {
     if (iframeContainer) {
       const playerVars = {
         origin: window.location.origin,
-        // controls: 0,
+        controls: 0,
         disablekb: 1,
         fs: 0,
         playlist: iframeContainer.id,
-        // autoplay: 1,
         loop: 1,
         mute: 1,
         rel: 0,

@@ -6,7 +6,7 @@
   z-index: 999;
   padding: 2.75rem 0;
   background: linear-gradient(0deg, rgba(255, 131, 116, 0) 0%, #ff8374 29.69%);
-  & + .animation_helper {
+  & + div {
     padding-top: 13rem;
   }
   .container {
@@ -107,7 +107,7 @@
   .header {
     padding: 1.19rem 0;
     background: #ff8373;
-    & + .animation_helper {
+    & + div {
       padding-top: 6.5656rem;
     }
     &__mobile-button {

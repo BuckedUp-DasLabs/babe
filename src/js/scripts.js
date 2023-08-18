@@ -6,7 +6,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 let players = {};
 function onYouTubeIframeAPIReady() {
   const pages = document.querySelectorAll(".main__container");
-  console.log(pages);
   pages.forEach((page) => {
     const iframeContainer = page.querySelector("[video]");
     if (iframeContainer) {
@@ -20,7 +19,6 @@ function onYouTubeIframeAPIReady() {
         mute: 1,
         rel: 0,
       };
-      console.log(page.classList.contains("active"))
       if (page.classList.contains("active")) playerVars["autoplay"] = 1;
       if (iframeContainer)
         players[iframeContainer.id] = new YT.Player(iframeContainer.id, {
@@ -73,12 +71,15 @@ const handleCurrentPage = (first = false) => {
   pages.forEach((page) => {
     page.classList.remove("active");
     const iframe = page.querySelector("iframe");
-    if (!first) {
-      if (iframe) players[iframe.id].pauseVideo();
+    if (!first && iframe && players[iframe.id]) {
+      try{
+        players[iframe.id].pauseVideo();
+      }catch{
+      }
     }
     if (page.id === currentPage) {
       page.classList.add("active");
-      if (iframe) players[iframe.id].playVideo();
+      if (iframe) try{players[iframe.id].playVideo()}catch{};
     }
   });
 };

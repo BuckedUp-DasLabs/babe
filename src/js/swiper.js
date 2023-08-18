@@ -13,6 +13,8 @@ const baseConfig = {
   spaceBetween: 16,
   rewind: true,
   speed: 500,
+  effect: `fade`,
+  crossFade: true,
   autoplay: {
     delay: 2500,
     disableOnInteraction: true,

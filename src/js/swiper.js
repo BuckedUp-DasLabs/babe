@@ -13,8 +13,6 @@ const baseConfig = {
   spaceBetween: 16,
   rewind: true,
   speed: 500,
-  effect: `fade`,
-  crossFade: true,
   autoplay: {
     delay: 2500,
     disableOnInteraction: true,
@@ -41,5 +39,18 @@ const swiperCollagen = new Swiper(".swiper-collagen", {
     clickable: true,
     renderBullet: (index, className) =>
       getPaginationImages(index, className, imagesCollagen),
+  },
+});
+
+const imagesBoost = document.querySelectorAll(
+  ".swiper-boost .swiper-slide img"
+);
+const swiperBoost = new Swiper(".swiper-boost", {
+  ...baseConfig,
+  pagination: {
+    el: ".boost-pagination",
+    clickable: true,
+    renderBullet: (index, className) =>
+      getPaginationImages(index, className, imagesBoost),
   },
 });

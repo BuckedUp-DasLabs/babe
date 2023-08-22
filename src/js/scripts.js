@@ -1,34 +1,3 @@
-let tag = document.createElement("script");
-tag.src = "https://www.youtube.com/iframe_api";
-let firstScriptTag = document.getElementsByTagName("script")[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-let players = {};
-function onYouTubeIframeAPIReady() {
-  const pages = document.querySelectorAll(".main__container");
-  pages.forEach((page) => {
-    const iframeContainer = page.querySelector("[video]");
-    if (iframeContainer) {
-      const playerVars = {
-        origin: window.location.origin,
-        controls: 0,
-        disablekb: 1,
-        fs: 0,
-        playlist: iframeContainer.id,
-        loop: 1,
-        mute: 1,
-        rel: 0,
-      };
-      if (page.classList.contains("active")) playerVars["autoplay"] = 1;
-      if (iframeContainer)
-        players[iframeContainer.id] = new YT.Player(iframeContainer.id, {
-          videoId: iframeContainer.id,
-          playerVars: playerVars,
-        });
-    }
-  });
-}
-
 const links = document.querySelectorAll(".page-link");
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -70,17 +39,8 @@ const handleCurrentPage = (first = false) => {
   bg.classList.toggle("alternate");
   pages.forEach((page) => {
     page.classList.remove("active");
-    const iframe = page.querySelector("iframe");
-    if (!first && iframe && players[iframe.id]) {
-      try{
-        players[iframe.id].pauseVideo();
-      }catch{
-      }
-    }
-    if (page.id === currentPage) {
+    if (page.id === currentPage) 
       page.classList.add("active");
-      if (iframe) try{players[iframe.id].playVideo()}catch{};
-    }
   });
 };
 

@@ -23,6 +23,9 @@
     height: fit-content;
     max-width: 26rem;
     animation: forwards fadeIn 0.5s;
+    .swiper img{
+      max-height: calc(100vh - 23.3125rem);
+    }
     img {
       max-height: calc(100vh - 14.3125rem);
       object-fit: scale-down;

@@ -32,7 +32,7 @@ const handleCurrentLink = () => {
   });
 };
 
-const handleCurrentPage = (first = false) => {
+const handleCurrentPage = () => {
   const currentPage = urlParams.get("page");
   const pages = document.querySelectorAll(".main__container");
   const bg = document.querySelector(".main__bg");
@@ -56,6 +56,7 @@ const handleUrl = (e) => {
   state.page_id = e.target.innerHTML.replace(" ", "-");
   urlParams.set("page", `${e.target.getAttribute("to")}`);
   window.history.pushState(state, "", `?${urlParams}`);
+  window.scrollTo(0,0)
   handleCurrentLink();
 };
 

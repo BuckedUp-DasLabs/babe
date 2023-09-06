@@ -8,12 +8,11 @@
 .btn {
   border-radius: 6.25rem;
   border: 1px solid #ffa296;
-  background: linear-gradient(
-    180deg,
-    rgba(241, 124, 109, 0.14) 0%,
-    #864840 100%
+  background: var(
+    --botao,
+    linear-gradient(180deg, rgba(241, 124, 109, 0.14) 0%, #864840 100%)
   );
-  color: #fff;
+  color: black;
   text-align: center;
   text-shadow: -2px -2px 0px rgba(0, 0, 0, 0.25);
   font-size: 3.75rem;

@@ -14,9 +14,6 @@
     &:nth-child(even) {
       flex-direction: row-reverse;
     }
-    .h4 {
-      // max-width: 21.68rem;
-    }
     @media (max-width: 1125px) {
       gap: 1.25rem;
       img {

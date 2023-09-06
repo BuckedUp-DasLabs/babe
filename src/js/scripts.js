@@ -35,8 +35,6 @@ const handleCurrentLink = () => {
 const handleCurrentPage = () => {
   const currentPage = urlParams.get("page");
   const pages = document.querySelectorAll(".main__container");
-  const bg = document.querySelector(".main__bg");
-  bg.classList.toggle("alternate");
   pages.forEach((page) => {
     page.classList.remove("active");
     if (page.id === currentPage) 

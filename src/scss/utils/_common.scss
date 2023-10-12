@@ -6,12 +6,11 @@
 }
 
 .btn {
-  border-radius: 6.25rem;
+  color: white;
   border: 1px solid #ffa296;
-  background: linear-gradient(180deg, #f17c6d 0%, #864840 100%);
-  color: black;
+  background: linear-gradient(180deg, #f3260b 0%, #8f0145 100%);
+  border-radius: 6.25rem;
   text-align: center;
-  text-shadow: -2px -2px 0px rgba(0, 0, 0, 0.25);
   font-size: 3.75rem;
   font-style: normal;
   font-weight: 900;
@@ -22,9 +21,8 @@
   transition: 0s;
   &:hover,
   &:focus {
-    border: 1px solid #d55353;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, #0c0100 100%);
-    color: #d55353;
+    color: #ff8373;
   }
   @media (max-width: 1125px) {
     padding: 1.88rem;

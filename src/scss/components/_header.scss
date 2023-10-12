@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 999;
   padding: 1.75rem 0;
-  background: #ffe9dd;
+  background: linear-gradient(180deg, #aae2fa 0%, #c2dbe7 85.94%);
   & + div {
     padding-top: 13rem;
   }
@@ -137,7 +137,7 @@
       width: 100vw;
       height: calc(100vh - 5.5656rem);
       margin: 0;
-      background-color: #ffe9dd;
+      background: linear-gradient(180deg, #aae2fa 0%, #ffc9b6 46.88%, #fffaf8 100%);
       flex-direction: column;
       gap: 1.06rem;
       max-height: 0;

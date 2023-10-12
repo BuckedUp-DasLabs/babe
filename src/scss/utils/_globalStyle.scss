@@ -51,7 +51,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  &.bold {
+  &.bold,b {
     font-weight: 700;
   }
 }

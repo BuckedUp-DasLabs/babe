@@ -23,15 +23,18 @@
     height: fit-content;
     max-width: 26rem;
     animation: forwards fadeIn 0.5s;
-    .swiper img{
-      max-height: calc(100vh - 23.3125rem);
-    }
     img {
-      max-height: calc(100vh - 14.3125rem);
       object-fit: scale-down;
       width: 100%;
     }
+    .swiper img{
+      max-height: calc(100vh - 28.3125rem);
+    }
+    .swiper-pagination img{
+      max-height: calc(100vh - 14.3125rem);
+    }
     &__img {
+      max-height: calc(100vh - 18.3125rem);
       width: 100%;
     }
     @media (max-width: 1125px) {

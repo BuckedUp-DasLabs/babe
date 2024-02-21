@@ -21,8 +21,7 @@
   transition: 0s;
   &:hover,
   &:focus {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, #0c0100 100%);
-    color: #ff8373;
+    background: #ff6753;
   }
   @media (max-width: 1125px) {
     padding: 1.88rem;
